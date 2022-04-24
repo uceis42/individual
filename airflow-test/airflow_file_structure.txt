@@ -1,8 +1,0 @@
-airflow_home
-├── airflow.cfg
-├── airflow.db
-├── dags
-│   └── dag
-│       └── dag.py
-├── plugins
-└── unittests.cfg
