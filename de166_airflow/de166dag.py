@@ -15,6 +15,13 @@ import numpy as np
 from datetime import datetime
 from datetime import timedelta
 import logging
+import boto3
+import botocore
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+import pandas as pd
+import io
 
 
 log = logging.getLogger(__name__)
@@ -42,9 +49,7 @@ dag = DAG('DE166_web_scraping_pipeline',
 def web_scraping_function(**kwargs):
 
     # Import packages
-    import requests
-    from bs4 import BeautifulSoup
-    from urllib.parse import urljoin
+
 
     # Specify url
     url = kwargs['url_to_scrape']
@@ -65,34 +70,24 @@ def web_scraping_function(**kwargs):
     # Find all 'h2' tags (which define hyperlinks): h_tags
     tableContent = soup.find_all("td", {"class": "govuk-table__cell"})
 
-    companyName = []
-    companyNumber = []
-    status = []
-    link = []
+    companyContent = []
+   
     log.info('Going to scrape data from website')
 
     # Iterate over all the h2 tags found to extract the link and 
-    nextpage=soup.find_all('div', {'class': "pagination"})
-    nexpageUrl = nextpage[0].find('a',{"id":"nextLink"})
-    urltext= "https://find-and-update.company-information.service.gov.uk/alphabetical-search/"+str( nexpageUrl.get('href'))
-    print(urltext)
 
-    for i in range(int(len(tableContent)/3)):
-        indexNumber = i*3
-        companyName.append(tableContent[indexNumber].find(text=True)) 
-        number = tableContent[indexNumber+1].find(text=True)
-        companyNumber.append(number)
-        status.append(tableContent[indexNumber+2].find(text=True))
-        link.append("https://find-and-update.company-information.service.gov.uk/company/"+str(number)) 
-
-    sub_df = pd.DataFrame({'companyName': companyName, 'companyNumber': companyNumber,'status': status,'link': link })
+    for i in range(51):
+        
+        companyContent.append(tableContent[i].find(text=True)) 
+        log.info(i)
     
-    return sub_df,urltext
+
+    
+    return companyContent
 
 def s3_save_file_func(**kwargs):
 
-    import pandas as pd
-    import io
+    
 
     bucket_name = kwargs['de166-data']
     key = kwargs['s3_key']
@@ -146,4 +141,5 @@ save_scraped_data_to_s3_task = PythonOperator(
     trigger_rule=TriggerRule.ALL_SUCCESS,
     op_kwargs=default_args,
     dag=dag,
+)
 web_scraping_task >> save_scraped_data_to_s3_task

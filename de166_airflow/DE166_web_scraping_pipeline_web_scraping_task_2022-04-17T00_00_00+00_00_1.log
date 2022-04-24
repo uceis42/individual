@@ -1,0 +1,82 @@
+*** Reading local file: /usr/local/airflow/logs/DE166_web_scraping_pipeline/web_scraping_task/2022-04-24T10:03:18.971083+00:00/1.log
+[2022-04-24 10:03:20,431] {{taskinstance.py:655}} INFO - Dependencies all met for <TaskInstance: DE166_web_scraping_pipeline.web_scraping_task 2022-04-24T10:03:18.971083+00:00 [queued]>
+[2022-04-24 10:03:20,440] {{taskinstance.py:655}} INFO - Dependencies all met for <TaskInstance: DE166_web_scraping_pipeline.web_scraping_task 2022-04-24T10:03:18.971083+00:00 [queued]>
+[2022-04-24 10:03:20,440] {{taskinstance.py:866}} INFO - 
+--------------------------------------------------------------------------------
+[2022-04-24 10:03:20,440] {{taskinstance.py:867}} INFO - Starting attempt 1 of 1
+[2022-04-24 10:03:20,440] {{taskinstance.py:868}} INFO - 
+--------------------------------------------------------------------------------
+[2022-04-24 10:03:20,448] {{taskinstance.py:887}} INFO - Executing <Task(PythonOperator): web_scraping_task> on 2022-04-24T10:03:18.971083+00:00
+[2022-04-24 10:03:20,450] {{standard_task_runner.py:53}} INFO - Started process 26553 to run task
+[2022-04-24 10:03:20,484] {{logging_mixin.py:112}} INFO - Running %s on host %s <TaskInstance: DE166_web_scraping_pipeline.web_scraping_task 2022-04-24T10:03:18.971083+00:00 [running]> 34cbaf6db028
+[2022-04-24 10:03:20,498] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:20,498] {{de166dag.py:58}} INFO - Going to scrape data from https://find-and-update.company-information.service.gov.uk/alphabetical-search/get-results?companyName=a
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:75}} INFO - Going to scrape data from website
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 0
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 1
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 2
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 3
+[2022-04-24 10:03:22,765] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 4
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,765] {{de166dag.py:82}} INFO - 5
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 6
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 7
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 8
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 9
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 10
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 11
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 12
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 13
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 14
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 15
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 16
+[2022-04-24 10:03:22,766] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,766] {{de166dag.py:82}} INFO - 17
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 18
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 19
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 20
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 21
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 22
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 23
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 24
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 25
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 26
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 27
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 28
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 29
+[2022-04-24 10:03:22,767] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,767] {{de166dag.py:82}} INFO - 30
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 31
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 32
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 33
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 34
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 35
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 36
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 37
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 38
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 39
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 40
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 41
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 42
+[2022-04-24 10:03:22,768] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 43
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,768] {{de166dag.py:82}} INFO - 44
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 45
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 46
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 47
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 48
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 49
+[2022-04-24 10:03:22,769] {{logging_mixin.py:112}} INFO - [2022-04-24 10:03:22,769] {{de166dag.py:82}} INFO - 50
+[2022-04-24 10:03:22,769] {{python_operator.py:114}} INFO - Done. Returned value was: ['/ LTD', '11479550', 'Dissolved', '{ LTD', '11743635', 'Active', '& COLLEY LTD', '12016910', 'Dissolved', '& SUYA RESTAURANT LIMITED', '12030591', 'Active', ':::: LTD', '12153737', 'Active', '& AYAH LTD', '12191800', 'Dissolved', '/ LTD', '12289315', 'Active', '// LTD', '12382755', 'Active', '&MORTAR CONSULTING LTD', '12615666', 'Dissolved', '@ LTD', '12821321', 'Active', '... LTD', '12821336', 'Active', '&TADESSE LTD', '12832332', 'Dissolved', '> LIMITED', '12852967', 'Active', '-. LTD', '12870304', 'Active', '.- LTD', '12870308', 'Active', '? LTD', '13124568', 'Dissolved', '& CLEAN LTD', '13333846', 'Active']
+[2022-04-24 10:03:22,770] {{taskinstance.py:1128}} ERROR - maximum recursion depth exceeded while getting the str of an object
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 970, in _run_raw_task
+    self.xcom_push(key=XCOM_RETURN_KEY, value=result)
+  File "/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1474, in xcom_push
+    execution_date=execution_date or self.execution_date)
+  File "/usr/local/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/airflow/models/xcom.py", line 103, in set
+    value = XCom.serialize_value(value)
+  File "/usr/local/lib/python3.7/site-packages/airflow/models/xcom.py", line 224, in serialize_value
+    return pickle.dumps(value)
+  File "/usr/local/airflow/.local/lib/python3.7/site-packages/bs4/element.py", line 956, in __getnewargs__
+    return (str(self),)
+RecursionError: maximum recursion depth exceeded while getting the str of an object
+[2022-04-24 10:03:22,771] {{taskinstance.py:1185}} INFO - Marking task as FAILED.dag_id=DE166_web_scraping_pipeline, task_id=web_scraping_task, execution_date=20220424T100318, start_date=20220424T100320, end_date=20220424T100322
+

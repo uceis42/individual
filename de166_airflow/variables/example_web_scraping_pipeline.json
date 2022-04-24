@@ -1,0 +1,3 @@
+{"url_to_scrape": "https://find-and-update.company-information.service.gov.uk/alphabetical-search/get-results?companyName=a",
+"bucket_name": "de166-data",
+"s3_key": "output/example_web_scraping_pipeline/output.csv"}
