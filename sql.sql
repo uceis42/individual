@@ -20,7 +20,7 @@ create table public.companyDetail (
     companyType         varchar(256),
     incorporated             varchar(256),
     industryCode          varchar(256),
-    postCode             varchar(256) unique,
+    postCode             varchar(256),
     latitude              float,
     longitude              float
    
@@ -30,7 +30,7 @@ create table public.pollutionInventory (
     LocalAuthorityDistractName    varchar(256),
     Operator                  varchar(256),
     Site                  varchar(256),
-    Postcode                varchar(256) REFERENCES public.companyDetail (postCode),
+    Postcode                varchar(256),
     Reference         varchar(256),
     SubstanceName             varchar(256),
     year2005          float,

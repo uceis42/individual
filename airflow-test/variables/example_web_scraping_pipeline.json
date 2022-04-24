@@ -1,0 +1,3 @@
+{"url_to_scrape": "http://www.mgmt.ucl.ac.uk/blog/index.html",
+"bucket_name": "ucl-test-mwaa",
+"s3_key": "output/example_web_scraping_pipeline/output.csv"}
