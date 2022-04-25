@@ -4,7 +4,7 @@ Created on Sun Apr 24 11:18:32 2022
 
 @author: Shihao Zhou
 """
-
+ # Import packages here
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.trigger_rule import TriggerRule
@@ -25,7 +25,7 @@ import io
 
 
 log = logging.getLogger(__name__)
-
+# setup the default info 
 default_args = {
     'start_date': datetime(2022, 4, 14),
     'owner': 'Airflow',
@@ -39,7 +39,7 @@ default_args = {
     'retries': 0,
     'retry_delay': timedelta(minutes=5)
 }
-
+# here is the info for dag
 dag = DAG('DE166_web_scraping_pipeline',
           description='a web scraping pipeline that save the outout to a csv file in S3',
           schedule_interval='@weekly',
@@ -48,7 +48,7 @@ dag = DAG('DE166_web_scraping_pipeline',
           max_active_runs=1)
 def web_scraping_function(**kwargs):
 
-    # Import packages
+   
 
 
     # Specify url
@@ -57,28 +57,26 @@ def web_scraping_function(**kwargs):
 
     log.info('Going to scrape data from {0}'.format(url))
 
-    # Package the request, send the request and catch the response: r
+    # setting header nad request
     headers = {"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}
     html = requests.get(url, headers=headers,timeout=10)
 
-    # Extracts the response as html: html_doc
-
-
-    # create a BeautifulSoup object from the HTML: soup
+    # create a Soup 
     soup = BeautifulSoup(html.text, 'lxml')
 
-    # Find all 'h2' tags (which define hyperlinks): h_tags
+    # Find all 'td' tags (which define class): govuk-table__cell
     tableContent = soup.find_all("td", {"class": "govuk-table__cell"})
 
     companyContent = []
    
     log.info('Going to scrape data from website')
 
-    # Iterate over all the h2 tags found to extract the link and 
+    # Iterate to append info into the empty list
 
     for i in range(51):
         
         companyContent.append(tableContent[i].find(text=True)) 
+        #showing info in log
         log.info(i)
     
 
@@ -124,7 +122,7 @@ def s3_save_file_func(**kwargs):
     object.put(Body=data)
 
     log.info('Finished saving the scraped data to s3')
-
+# adding infor for tasks
 web_scraping_task = PythonOperator(
     task_id='web_scraping_task',
     provide_context=True,
