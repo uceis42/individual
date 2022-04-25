@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 
-
+# setup the first url and header
 headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"}
 url = 'https://find-and-update.company-information.service.gov.uk/alphabetical-search/get-results?companyName=%5C&searchAfter=%3A02559441'
 
@@ -18,6 +18,7 @@ df_namelist = pd.DataFrame()
 df_namelist_old= pd.DataFrame()
 
 def getCompanylist(url):
+    #try 3 times first 
     try:
         html = requests.get(url, headers=headers,timeout=10)
     except:    
@@ -40,11 +41,11 @@ def getCompanylist(url):
     
     tableContent = soup.find_all("td", {"class": "govuk-table__cell"})
     
-
+# this is for getting the url for next page
     nextpage=soup.find_all('div', {'class': "pagination"})
     nexpageUrl = nextpage[0].find('a',{"id":"nextLink"})
     urltext= "https://find-and-update.company-information.service.gov.uk/alphabetical-search/"+str( nexpageUrl.get('href'))
-
+# here we need to get the len/3 since one set contains 3 values
     for i in range(int(len(tableContent)/3)):
         indexNumber = i*3
         companyName.append(tableContent[indexNumber].find(text=True)) 
@@ -59,7 +60,7 @@ def getCompanylist(url):
 
 
 
-for i in range(100):# only get the first 100 pages
+for i in range(100):# only get the first 100 pages. if we need all we can do len(df)
     try:
         df_namelist_new,url = getCompanylist(url)
     except:    
